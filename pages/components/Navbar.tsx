@@ -1,26 +1,38 @@
 import React from "react";
 import Link from 'next/link';
 
+import { useState } from "react";
+
 
 interface page {
   page: string;
 }
 
 const Navbar = ({ page }:page) => {
+  const [visibility, setVisibility] = useState('closed')
+  const hanldeClick = () => {
+    if (visibility === 'closed') {
+      setVisibility('open')
+    } else if (visibility === 'open') {
+      setVisibility('closed');
+    }
+  }
   return (
     <div className={`${page}-navbar`}>
-      <Link href="/" className="nav-title-link">
-        <h1 className={`${page}-nav-title nav-title`}>
-          Rich Bennett
-        </h1>
-      </Link>
-      <button type="button" className="hamburger">
-        <span className="material-icons">
-          menu
+      <div className="title-burger">
+        <Link href="/" className="nav-title-link">
+          <h1 className={`${page}-nav-title nav-title`}>
+            Rich Bennett
+          </h1>
+        </Link>
+        <button type="button" className="hamburger" onClick={hanldeClick}>
+        <span className="material-symbols-outlined">
+          {visibility === 'closed' ? 'menu' : 'close'}
         </span>
-      </button>
+        </button>
+      </div>
       <div className="navbar-collapse">
-        <ul className={`${page}-nav-links collapse`}>
+        <ul className={`${page}-nav-links ${visibility === 'open' ? '' : 'collapse'}`}>
           <li className="nav-link">
             <Link href="/projects">
               Projects
