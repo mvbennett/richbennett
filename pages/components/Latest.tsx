@@ -2,13 +2,15 @@ import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 
+import underwaterVinyl from '../../public/images/underwatervinyl.webp'
+
 const Latest = () => {
   return (
     <div>
       <Navbar page="home" />
       <div className="container">
         <div className="latest-post">
-          <Image className="latest-img" src="https://res.cloudinary.com/dduinomn4/image/upload/v1672639348/rich/underwatervinyl_zqt2zs.png" alt="Music for Underwater Supermarkets on Vinyl" width={1200} height={700} />
+          <Image className="latest-img" src={underwaterVinyl} alt="Music for Underwater Supermarkets Vinyl" />
           <div className="latest-post-content">
             <h3>Music for Underwater Supermarkets now on vinyl</h3>
             <p>

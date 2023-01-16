@@ -1,23 +1,31 @@
 import React from "react";
 import Image from "next/image";
 
-const ProductionCard = ({ production }) => {
+interface props {
+  production: {
+    link: string,
+    title: string,
+    img: any,
+    artist: string,
+    icons: any
+  }
+}
+
+const ProductionCard = ({production: {title, link, img, artist, icons}}:props) => {
   return (
     <div className="production-card">
-      <a href={production.link} target="_blank" rel="noreferrer">
-        <Image src={production.img} alt={production.title} className="album-cover" />
+      <a href={link} target="_blank" rel="noreferrer">
+        <Image src={img} alt={title} className="album-cover" />
       </a>
-      <a href={production.link} target="_blank" rel="noreferrer">
+      <a href={link} target="_blank" rel="noreferrer">
         <h3 className="production-title">
-          {production.title}
+          {title}
           -
-          {production.artist}
+          {artist}
         </h3>
       </a>
       <div className="production-icons">
-        {production.icons === undefined ? <div /> : production.icons.map((icon) => {
-          return <img src={icon.img} alt={icon.name} key={icon.name} />;
-        })}
+        {icons === undefined ? <div /> : icons.join(' / ')}
       </div>
     </div>
   );
