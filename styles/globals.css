@@ -362,6 +362,7 @@ a {
   display: flex;
   gap: 16px;
   max-width: 1200px;
+  align-items: center;
 }
 
 .bio-pic {

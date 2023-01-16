@@ -7,7 +7,7 @@ interface props {
     title: string,
     img: any,
     artist: string,
-    icons: any
+    icons: string[]
   }
 }
 
