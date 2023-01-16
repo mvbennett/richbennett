@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
+import Form from "./Form";
 
 import underwaterVinyl from '../public/images/underwatervinyl.webp'
 
@@ -9,6 +10,7 @@ const Latest = () => {
     <div>
       <Navbar page="home" />
       <div className="container">
+        {/* <Form /> */}
         <div className="latest-post">
           <Image className="latest-img" src={underwaterVinyl} alt="Music for Underwater Supermarkets Vinyl" />
           <div className="latest-post-content">
