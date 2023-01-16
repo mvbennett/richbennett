@@ -2,14 +2,14 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import Navbar from "./Navbar";
 
-import underwaterSuper from '../../public/images/underwater_supermarkets.jpg';
-import spacetronic from '../../public/images/spacetronic_lunchbox.jpg';
-import italianSoda from '../../public/images/italian_soda.jpg';
-import pinkSand from '../../public/images/pink_sand.jpg';
-import musicaAqui from '../../public/images/musica_aqui.jpg';
-import dibenedetto from '../../public/images/dibenedetto.jpg';
-import soundParadise from '../../public/images/sound_paradise.jpg';
-import outerSunset from '../../public/images/outer_sunset.jpg';
+import underwaterSuper from '../public/images/underwater_supermarkets.jpg';
+import spacetronic from '../public/images/spacetronic_lunchbox.jpg';
+import italianSoda from '../public/images/italian_soda.jpg';
+import pinkSand from '../public/images/pink_sand.jpg';
+import musicaAqui from '../public/images/musica_aqui.jpg';
+import dibenedetto from '../public/images/dibenedetto.jpg';
+import soundParadise from '../public/images/sound_paradise.jpg';
+import outerSunset from '../public/images/outer_sunset.jpg';
 
 const Projects = () => {
   const projectsList = [

@@ -1,4 +1,4 @@
-import Productions from "./components/Productions"
+import Productions from "../components/Productions"
 
 export default function productions() {
   return (

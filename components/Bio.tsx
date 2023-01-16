@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 
-import rich from '../../public/images/rich.jpg'
+import rich from '../public/images/rich.jpg'
 
 const Bio = () => {
   return (

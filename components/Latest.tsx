@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 
-import underwaterVinyl from '../../public/images/underwatervinyl.webp'
+import underwaterVinyl from '../public/images/underwatervinyl.webp'
 
 const Latest = () => {
   return (
