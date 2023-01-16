@@ -2,42 +2,42 @@ import React from "react";
 import ProductionCard from "./ProductionCard";
 import Navbar from "./Navbar";
 
-import compose from '../assets/icons/compose.png';
-import produce from '../assets/icons/produce.png';
-import guitar from '../assets/icons/guitar.png';
+// import compose from '../assets/icons/compose.png';
+// import produce from '../assets/icons/produce.png';
+// import guitar from '../assets/icons/guitar.png';
 
-import betweenTheFunk from '../assets/images/between_the_funk.jpg';
-import memoryBox from '../assets/images/memory_box.jpg';
-import fakeLove from '../assets/images/fake_love.jpg';
-import pizzaConspiracy from '../assets/images/pizza_conspiracy.jpg';
-import writtenStars from '../assets/images/written_stars.jpg';
-import lastAmerican from '../assets/images/last_american.jpg';
-import noMansLand from '../assets/images/no_mans_land.jpg';
-import mustDance from '../assets/images/must_dance.jpg';
-import comrades from '../assets/images/comrades.jpg';
-import unhinged from '../assets/images/unhinged.jpg';
-import knownObjects from '../assets/images/known_objects.jpg';
-import animals from '../assets/images/animals.jpg';
-import dottedLines from '../assets/images/dotted_lines.jpg';
-import rubberPoultry from '../assets/images/rubber_poultry.jpg';
-import onlyDaughter from '../assets/images/only_daughter.jpg';
-import viewfinder from '../assets/images/viewfinder.jpg';
+import betweenTheFunk from '../../public/images/between_the_funk.jpg';
+import memoryBox from '../../public/images/memory_box.jpg';
+import fakeLove from '../../public/images/fake_love.jpg';
+import pizzaConspiracy from '../../public/images/pizza_conspiracy.jpg';
+import writtenStars from '../../public/images/written_stars.jpg';
+import lastAmerican from '../../public/images/last_american.jpg';
+import noMansLand from '../../public/images/no_mans_land.jpg';
+import mustDance from '../../public/images/must_dance.jpg';
+import comrades from '../../public/images/comrades.jpg';
+import unhinged from '../../public/images/unhinged.jpg';
+import knownObjects from '../../public/images/known_objects.jpg';
+import animals from '../../public/images/animals.jpg';
+import dottedLines from '../../public/images/dotted_lines.jpg';
+import rubberPoultry from '../../public/images/rubber_poultry.jpg';
+import onlyDaughter from '../../public/images/only_daughter.jpg';
+import viewfinder from '../../public/images/viewfinder.jpg';
 
 const ICONS = {
   compose: {
     // img: 'https://res.cloudinary.com/dduinomn4/image/upload/v1672639353/rich/compose_oi0ztl.png',
     name: 'Composer',
-    img: compose
+    img: ''
   },
   produce: {
     // img: 'https://res.cloudinary.com/dduinomn4/image/upload/v1672639441/rich/produce_zehr3w.png',
     name: 'Producer',
-    img: produce
+    img: ''
   },
   guitar: {
     // img: 'https://res.cloudinary.com/dduinomn4/image/upload/v1672639438/rich/guitar_nzlgek.png',
     name: 'Musician',
-    img: guitar
+    img: ''
   }
 };
 
