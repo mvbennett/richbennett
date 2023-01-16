@@ -6,16 +6,31 @@ const Form = () => {
     email: '',
     phone: '',
     message: ''
-  })
+  });
+
+  const [valid, setValid] = useState(false);
+
+  const checkValidity = () => {
+    if (message.name.length > 2 && message.message.length > 10) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
+  }
 
   const handleChange = (e :any) => {
     console.log(e.target.value);
     setMessage({...message, [e.target.name]: e.target.value})
+    checkValidity();
   }
 
   const handleSubmit = (e :any) => {
     e.preventDefault()
-    console.log(`this is your messgae: From: ${message.name}\n at ${message.email} & ${message.phone}\n content: ${message.message}`);
+    if (valid) {
+      console.log(`this is your message: From: ${message.name}\n at ${message.email} & ${message.phone}\n content: ${message.message}`);
+    } else {
+      console.log('invalid!');
+    }
 
   }
   return (
