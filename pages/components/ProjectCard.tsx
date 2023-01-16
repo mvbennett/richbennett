@@ -1,13 +1,21 @@
 import React from "react";
 import Image from "next/image";
 
-const ProjectCard = ({ project }) => {
+interface props {
+  project: {
+    title: string,
+    img: any,
+    link: string
+  }
+}
+
+const ProjectCard = ({ project: {title, img, link} }:props) => {
   return (
     <div className="project-card">
-      <a href={project.link}>
-        <Image src={project.img} alt={project.title} className="project-album-cover" />
+      <a href={link}>
+        <Image src={img} alt={title} className="project-album-cover" />
         <h3 className="project-title">
-          {project.title}
+          {title}
         </h3>
       </a>
     </div>
