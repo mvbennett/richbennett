@@ -10,8 +10,37 @@ const Form = () => {
 
   const [valid, setValid] = useState(false);
 
+  const checkName = () => {
+    return message.name.length > 2;
+  }
+
+  const checkMessage = () => {
+    return message.message.length > 10;
+  }
+
+  const checkPhone = () => {
+    const phonexp = RegExp(/\d{11}/);
+    return phonexp.test(message.phone);
+  }
+
+  const checkEmail = () => {
+    const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
+    console.log(`email in func: ${regexp.test(message.email)}`);
+    return regexp.test(message.email);
+  }
+
   const checkValidity = () => {
-    if (message.name.length > 2 && message.message.length > 10) {
+    console.log(`name :${checkName()}`);
+    console.log(`message: ${checkMessage()}`);
+    console.log(`email: ${checkEmail()}`);
+    console.log(`phone: ${checkPhone()}`);
+
+
+    console.log(`full check: ${checkName() && checkMessage() && checkEmail()}`);
+
+
+    if (checkName() && checkMessage() && checkEmail() && checkPhone()) {
+      console.log('all valid now!');
       setValid(true);
     } else {
       setValid(false);
