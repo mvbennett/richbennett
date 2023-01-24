@@ -12,7 +12,7 @@ interface props {
 const ProjectCard = ({ project: {title, img, link} }:props) => {
   return (
     <div className="project-card">
-      <a href={link}>
+      <a href={link} target="_blank" rel="noreferrer">
         <Image src={img} alt={title} className="project-album-cover" />
         <h3 className="project-title">
           {title}
