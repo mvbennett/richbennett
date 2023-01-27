@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Image from "next/image";
 
 import rich from '../public/images/rich.jpg'
+import Form from "./Form";
 
 const Bio = () => {
   return (
@@ -22,6 +23,7 @@ const Bio = () => {
             </p>
           </div>
         </div>
+        <Form />
       </div>
     </div>
   );
