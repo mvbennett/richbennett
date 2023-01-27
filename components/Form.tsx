@@ -65,7 +65,7 @@ const Form = () => {
   return (
     <div className="form">
       <h2>
-        Contact Me to scedule a session:
+        Contact Me to schedule a session:
       </h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
