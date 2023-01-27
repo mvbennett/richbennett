@@ -416,6 +416,7 @@ a {
 }
 
 .proj-nav-link:hover {
+  cursor: pointer;
   color: #01282e;
 }
 
