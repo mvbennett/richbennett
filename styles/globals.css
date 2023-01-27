@@ -408,6 +408,21 @@ a {
   padding-left: 0;
 }
 
+.proj-nav-link {
+  font-weight: 600;
+  color: #004B58;
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
+.proj-nav-link:hover {
+  color: #01282e;
+}
+
+.proj-nav-link:visited {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 500px) {
   .bio-card {
     flex-direction: column;

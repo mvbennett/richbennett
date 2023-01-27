@@ -4,14 +4,16 @@ import Image from "next/image";
 import Form from "./Form";
 
 import underwaterVinyl from '../public/images/underwatervinyl.webp'
+import Post from "./Post";
 
 const Latest = () => {
   return (
     <div>
       <Navbar page="home" />
       <div className="container">
+        <Post />
         {/* <Form /> */}
-        <div className="latest-post">
+        {/* <div className="latest-post">
           <Image className="latest-img" src={underwaterVinyl} alt="Music for Underwater Supermarkets Vinyl" />
           <div className="latest-post-content">
             <h3>Music for Underwater Supermarkets now on vinyl</h3>
@@ -30,7 +32,7 @@ const Latest = () => {
               Order on Bandcamp
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

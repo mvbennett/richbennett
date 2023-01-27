@@ -86,17 +86,17 @@ const Projects = () => {
         <h2>Projects</h2>
         <ul className="project-nav">
           <li>
-            <button onClick={handleClick} value="Roman Angelos">
+            <button onClick={handleClick} className={'proj-nav-link'} value="Roman Angelos">
               Roman Angelos
             </button>
           </li>
           <li>
-            <button onClick={handleClick} value="Limoncello">
+            <button onClick={handleClick} className={'proj-nav-link'} value="Limoncello">
               Limoncello
             </button>
           </li>
           <li>
-            <button onClick={handleClick} value="Monocle">
+            <button onClick={handleClick} className={'proj-nav-link'} value="Monocle">
               Monocle
             </button>
           </li>
