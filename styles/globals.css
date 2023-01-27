@@ -400,6 +400,14 @@ a {
   flex-grow: 1;
 }
 
+.project-nav {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 16px;
+  padding-left: 0;
+}
+
 @media screen and (max-width: 500px) {
   .bio-card {
     flex-direction: column;
