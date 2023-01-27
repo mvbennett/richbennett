@@ -68,23 +68,27 @@ const Form = () => {
         Contact Me to schedule a session:
       </h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name:
-          <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} />
-        </label>
-        <label htmlFor="email">
-          Email:
-          <input type="text" name="email" placeholder="rich@richbennett.com" onChange={handleChange} />
-        </label>
-        <label htmlFor="phone number">
-          Phone number:
-          <input type="text" name="phone" placeholder="(212)867-5309" onChange={handleChange} />
-        </label>
-        <label htmlFor="message">
-          Your message:
-          <textarea name="message" id="message" cols={30} rows={10} onChange={handleChange} ></textarea>
-        </label>
-        <button>
+        <div className="row">
+          <label htmlFor="name">
+            Name:
+            <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} />
+          </label>
+          <label htmlFor="email">
+            Email:
+            <input type="text" name="email" placeholder="rich@richbennett.com" onChange={handleChange} />
+          </label>
+          <label htmlFor="phone number">
+            Phone number:
+            <input type="text" name="phone" placeholder="(212)867-5309" onChange={handleChange} />
+          </label>
+        </div>
+        <div className="row">
+          <label htmlFor="message">
+            Your message:
+            <textarea name="message" id="message" cols={30} rows={10} onChange={handleChange} ></textarea>
+          </label>
+        </div>
+        <button className="send-btn">
           Send Message
         </button>
       </form>
