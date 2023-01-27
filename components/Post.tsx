@@ -13,7 +13,7 @@ interface props {
 const Post = ({post: { img, title, content, link, linkText } }:props) => {
   return(
     <div className="latest-post">
-          <Image className="latest-img" src={img} alt={title} />
+          <Image className="latest-img" src={img} alt={title} priority={true} />
           <div className="latest-post-content">
             <h2>{title}</h2>
             <p>
