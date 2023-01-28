@@ -84,11 +84,11 @@ const Form = ({ handleChange, handleSubmit }:props) => {
           </label>
           <label htmlFor="email">
             Email:
-            <input type="text" name="email" placeholder="rich@richbennett.com" onChange={handleChange} />
+            <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} />
           </label>
           <label htmlFor="phone number">
             Phone number:
-            <input type="text" name="phone" placeholder="(212)867-5309" onChange={handleChange} />
+            <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} />
           </label>
         </div>
         <div className="row">
