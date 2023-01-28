@@ -4,6 +4,7 @@ import Form from "./Form";
 
 import postList from '../content/posts';
 import Post from "./Post";
+import FormContainer from "./FormContainer";
 
 const Latest = () => {
   const posts = postList.map(post => <Post post={post} key={post.title} />)
@@ -11,8 +12,8 @@ const Latest = () => {
     <div>
       <Navbar page="home" />
       <div className="container">
+        {/* <FormContainer /> */}
         {posts}
-        {/* <Form /> */}
       </div>
     </div>
   );
