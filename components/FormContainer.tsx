@@ -28,7 +28,7 @@ const FormContainer = () => {
 
   const checkEmail = () => {
     const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
-    console.log(`email in func: ${regexp.test(message.email)}`);
+    // console.log(`email in func: ${regexp.test(message.email)}`);
     return regexp.test(message.email);
   }
 
@@ -43,7 +43,8 @@ const FormContainer = () => {
 
 
     if (checkName() && checkMessage() && checkEmail() && checkPhone()) {
-      console.log('all valid now!');
+      const disabled = document.querySelector('.disabled');
+      if (disabled !== null) disabled.classList.remove('disabled');
       setValid(true);
     } else {
       setValid(false);

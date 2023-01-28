@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { HtmlHTMLAttributes, useState } from "react";
 
 interface props {
     handleChange: any,
-    handleSubmit: any
+    handleSubmit: any,
   }
 
 
@@ -71,6 +71,7 @@ const Form = ({ handleChange, handleSubmit }:props) => {
   //   }
 
   // }
+
   return (
     <div className="form">
       <h2>
@@ -97,7 +98,7 @@ const Form = ({ handleChange, handleSubmit }:props) => {
             <textarea name="message" id="message" cols={30} rows={20} onChange={handleChange} ></textarea>
           </label>
         </div>
-        <button className="send-btn">
+        <button className='disabled send-btn'>
           Send Message
         </button>
       </form>
