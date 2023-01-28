@@ -16,6 +16,10 @@ const Projects = () => {
   const handleClick = (e: any) => {
     e.preventDefault();
 
+    const underlined = document.querySelector('.underline');
+    if (underlined !== null) underlined.classList.remove('underline');
+
+    e.target.classList.add('underline');
     setProjects(projectsList.filter((p) => {
       return p.artist === e.target.value
     }))

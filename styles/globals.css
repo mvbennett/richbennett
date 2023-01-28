@@ -418,9 +418,10 @@ a {
 .proj-nav-link:hover {
   cursor: pointer;
   color: #01282e;
+  text-decoration: overline;
 }
 
-.proj-nav-link:visited {
+.underline {
   text-decoration: underline;
 }
 
