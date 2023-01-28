@@ -6,7 +6,9 @@ import { useState } from "react";
 import projectsList from '../content/projects';
 
 const Projects = () => {
-  const [projects, setProjects] = useState(projectsList)
+  const [projects, setProjects] = useState((projectsList.filter((p) => {
+    return p.artist === 'Roman Angelos'
+  })))
 
   let projectCards = projects.map((project) => {
     return <ProjectCard project={project} key={project.title} />;
@@ -32,7 +34,7 @@ const Projects = () => {
         <h2>Projects</h2>
         <ul className="project-nav">
           <li>
-            <button onClick={handleClick} className={'proj-nav-link'} value="Roman Angelos">
+            <button onClick={handleClick} className={'proj-nav-link underline'} value="Roman Angelos">
               Roman Angelos
             </button>
           </li>
