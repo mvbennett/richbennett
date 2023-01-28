@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import rich from '../public/images/rich.jpg'
 import Form from "./Form";
+import FormContainer from "./FormContainer";
 
 const Bio = () => {
   return (
@@ -23,7 +24,7 @@ const Bio = () => {
             </p>
           </div>
         </div>
-        <Form />
+        <FormContainer />
       </div>
     </div>
   );
