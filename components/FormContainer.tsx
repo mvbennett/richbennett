@@ -88,10 +88,10 @@ const FormContainer = () => {
       // })}
 
       emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
+        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
         {from_name, phone, reply_to, content},
-        process.env.NEXT_PUBLIC_EMAIL_KEY
+        `${process.env.NEXT_PUBLIC_EMAIL_KEY}`
       )
       .then((response: any) => {
         // console.log('SUCCESS!', response.status, response.text);
