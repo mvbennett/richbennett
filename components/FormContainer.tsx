@@ -14,8 +14,10 @@ const FormContainer = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const [nameValid, setNameValid] = useState(false)
+
   const checkName = () => {
-    return message.name.length > 2;
+    return setNameValid(message.name.length > 2);
   }
 
   const checkMessage = () => {
@@ -41,9 +43,9 @@ const FormContainer = () => {
 
 
     // console.log(`full check: ${checkName() && checkMessage() && checkEmail()}`);
+    checkName();
 
-
-    if (checkName() && checkMessage() && checkEmail() && checkPhone()) {
+    if (nameValid && checkMessage() && checkEmail() && checkPhone()) {
       const disabled = document.querySelector('.disabled');
       if (disabled !== null) disabled.classList.remove('disabled');
       setValid(true);
@@ -58,6 +60,28 @@ const FormContainer = () => {
     checkValidity();
   }
 
+  const handleBlur = (e: any) => {
+    console.log(e.target.name);
+    let isValid;
+    switch (e.target.name) {
+      case 'name':
+        isValid = nameValid;
+        break;
+      case 'email':
+
+        break;
+      case 'phone':
+
+        break;
+      default:
+        break;
+    }
+    if (isValid) {
+      e.target.classList.remove('invalid-input')
+    } else {
+      e.target.classList.add('invalid-input')
+    }
+  }
 
   const handleSubmit = (e :any) => {
     e.preventDefault()
@@ -113,7 +137,7 @@ const FormContainer = () => {
         </h2>
       </div>
       :
-      <Form handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Form handleBlur={handleBlur} handleChange={handleChange} handleSubmit={handleSubmit} />
   );
 };
 

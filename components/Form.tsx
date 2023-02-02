@@ -1,12 +1,13 @@
 import { HtmlHTMLAttributes, useState } from "react";
 
 interface props {
+    handleBlur: any,
     handleChange: any,
     handleSubmit: any,
   }
 
 
-const Form = ({ handleChange, handleSubmit }:props) => {
+const Form = ({ handleBlur, handleChange, handleSubmit }:props) => {
   // const [message, setMessage] = useState({
   //   name: '',
   //   email: '',
@@ -81,15 +82,15 @@ const Form = ({ handleChange, handleSubmit }:props) => {
         <div className="row">
           <label htmlFor="name">
             Name:
-            <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} />
+            <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} onBlur={handleBlur} />
           </label>
           <label htmlFor="email">
             Email:
-            <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} />
+            <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} onBlur={handleBlur} />
           </label>
           <label htmlFor="phone number">
             Phone number:
-            <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} />
+            <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} onBlur={handleBlur} />
           </label>
         </div>
         <div className="row">

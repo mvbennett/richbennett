@@ -473,6 +473,10 @@ textarea {
   cursor: default;
 }
 
+.invalid-input {
+  border: 1px solid red;
+}
+
 @media screen and (max-width: 500px) {
   .bio-card {
     flex-direction: column;
