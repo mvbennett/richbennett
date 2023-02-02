@@ -1,0 +1,52 @@
+.production-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.album-cover {
+  height: 150px;
+  width: 150px;
+}
+
+.production-title {
+  margin: 0;
+}
+
+.production-icons {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  margin-left: 16px;
+  font-family: 'Comfortaa', 'monospace';
+}
+
+.production-icons > img {
+  height: 32px;
+  width: 32px;
+}
+
+@media screen and (max-width: 820px) {
+  .album-cover {
+    height: 150px;
+    width: 150px;
+  }
+
+  .production-icons > img {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .album-cover {
+    height: 100px;
+    width: 100px;
+  }
+
+  .production-icons {
+    margin-left: 0;
+  }
+}

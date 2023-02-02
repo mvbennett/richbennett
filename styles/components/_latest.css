@@ -1,0 +1,27 @@
+.latest-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  margin: 48px auto;
+  text-align: justify;
+}
+
+.latest-post-content {
+  margin-bottom: 16px;
+}
+
+.latest-img {
+  width: 800px;
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .latest-post {
+    width: 100%;
+  }
+
+  .latest-img {
+    max-width: 100%;
+  }
+}
