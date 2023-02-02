@@ -10,7 +10,7 @@ interface page {
 
 const Navbar = ({ page }:page) => {
   const [visibility, setVisibility] = useState('closed')
-  const hanldeClick = () => {
+  const handleClick = () => {
     if (visibility === 'closed') {
       setVisibility('open')
     } else if (visibility === 'open') {
@@ -25,7 +25,7 @@ const Navbar = ({ page }:page) => {
             Rich Bennett
           </h1>
         </Link>
-        <button type="button" className="hamburger" onClick={hanldeClick}>
+        <button type="button" className="hamburger" onClick={handleClick}>
         <span className="material-symbols-outlined">
           {visibility === 'closed' ? 'menu' : 'close'}
         </span>
