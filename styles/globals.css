@@ -153,6 +153,7 @@ a {
   align-items: center;
   width: 800px;
   margin: 48px auto;
+  text-align: justify;
 }
 
 .latest-post-content {
@@ -338,6 +339,10 @@ a {
   .album-cover {
     height: 100px;
     width: 100px;
+  }
+
+  .production-icons {
+    margin-left: 0;
   }
 }
 
