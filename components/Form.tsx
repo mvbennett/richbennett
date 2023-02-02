@@ -4,10 +4,11 @@ interface props {
     handleBlur: any,
     handleChange: any,
     handleSubmit: any,
+    handleFocus: any,
   }
 
 
-const Form = ({ handleBlur, handleChange, handleSubmit }:props) => {
+const Form = ({ handleBlur, handleChange, handleSubmit, handleFocus }:props) => {
   // const [message, setMessage] = useState({
   //   name: '',
   //   email: '',
@@ -82,21 +83,21 @@ const Form = ({ handleBlur, handleChange, handleSubmit }:props) => {
         <div className="row">
           <label htmlFor="name">
             Name:
-            <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} onBlur={handleBlur} />
+            <input type="text" name="name" placeholder="Mike Bennett" onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus} />
           </label>
           <label htmlFor="email">
             Email:
-            <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} onBlur={handleBlur} />
+            <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus} />
           </label>
           <label htmlFor="phone number">
             Phone number:
-            <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} onBlur={handleBlur} />
+            <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus} />
           </label>
         </div>
         <div className="row">
           <label htmlFor="message">
             Your message:
-            <textarea name="message" id="message" cols={30} rows={20} onChange={handleChange} ></textarea>
+            <textarea name="message" id="message" cols={30} rows={20} onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus}></textarea>
           </label>
         </div>
         <button className='disabled send-btn'>

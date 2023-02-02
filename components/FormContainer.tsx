@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from './Form';
 import emailjs from '@emailjs/browser'
 
@@ -14,25 +14,39 @@ const FormContainer = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const [nameValid, setNameValid] = useState(false)
+  const [nameValid, setNameValid] = useState(false);
+
+  const [emailValid, setEmailValid] = useState(false);
+
+  const [phoneValid, setPhoneValid] = useState(false);
+
+  const [messageValid, setMessageValid] = useState(false);
+
+  useEffect(() => {
+    checkEmail();
+    checkMessage();
+    checkName();
+    checkPhone();
+  })
 
   const checkName = () => {
     return setNameValid(message.name.length > 2);
   }
 
   const checkMessage = () => {
-    return message.message.length > 10;
+    return setMessageValid(message.message.length > 10);
   }
 
   const checkPhone = () => {
-    const phonexp = RegExp(/^\d{10}$/);
-    return phonexp.test(message.phone);
+    const phonexp = RegExp(/^\d*$/);
+    console.log(`phone # length: ${message.phone.length}`);
+    return setPhoneValid(phonexp.test(message.phone) && message.phone.length == 10);
   }
 
   const checkEmail = () => {
     const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
     // console.log(`email in func: ${regexp.test(message.email)}`);
-    return regexp.test(message.email);
+    return setEmailValid(regexp.test(message.email));
   }
 
   const checkValidity = () => {
@@ -44,8 +58,11 @@ const FormContainer = () => {
 
     // console.log(`full check: ${checkName() && checkMessage() && checkEmail()}`);
     checkName();
+    checkEmail();
+    checkPhone();
+    checkMessage();
 
-    if (nameValid && checkMessage() && checkEmail() && checkPhone()) {
+    if (nameValid && messageValid && emailValid && phoneValid) {
       const disabled = document.querySelector('.disabled');
       if (disabled !== null) disabled.classList.remove('disabled');
       setValid(true);
@@ -61,26 +78,41 @@ const FormContainer = () => {
   }
 
   const handleBlur = (e: any) => {
-    console.log(e.target.name);
+    console.log('blur handler');
+    // console.log(e.target.name);
     let isValid;
     switch (e.target.name) {
       case 'name':
+        // checkName();
         isValid = nameValid;
         break;
       case 'email':
-
+        // checkEmail();
+        isValid = emailValid;
         break;
       case 'phone':
-
+        // checkPhone();
+        isValid = phoneValid;
+        break;
+      case 'message':
+        isValid = messageValid;
         break;
       default:
         break;
     }
+    console.log(`isValid: ${isValid}`);
+    console.log(`phoneValid: ${phoneValid}`);
+
+
     if (isValid) {
       e.target.classList.remove('invalid-input')
     } else {
       e.target.classList.add('invalid-input')
     }
+  }
+
+  const handleFocus = (e: any) => {
+    e.target.classList.remove('invalid-input');
   }
 
   const handleSubmit = (e :any) => {
@@ -137,7 +169,7 @@ const FormContainer = () => {
         </h2>
       </div>
       :
-      <Form handleBlur={handleBlur} handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Form handleBlur={handleBlur} handleChange={handleChange} handleSubmit={handleSubmit} handleFocus={handleFocus} />
   );
 };
 
