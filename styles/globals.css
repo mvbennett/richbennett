@@ -111,11 +111,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 } */
 
 /* from application.scss */
@@ -132,6 +127,32 @@ body {
   font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
   background-color: #F0F9FD;
   color: #004B58;
+}
+
+.form-toggle {
+  background: rgba(0,0,0,0);
+  padding: 16px 16px;
+  border: 1px solid var(--font-color);
+  border-radius: 25px;
+  cursor: pointer;
+  color: var(--font-color);
+}
+
+.form-toggle-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.dark {
+  background-color: var(--dark-background);
+  color: var(--dark-font);
+}
+
+.light {
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 a {
@@ -165,3 +186,18 @@ a {
 .underline {
   text-decoration: underline;
 }
+
+.toggle {
+  position: absolute;
+  right: 12px;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-background);
+    color: var(--dark-font);
+  }
+  .project-card {
+    background-color: #2b3237;
+  }
+} */

@@ -1,6 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
+
 export default function Document() {
+  // const [theme, setTheme] = useState('light');
+  // const toggleMode = () => {};
   return (
     <Html lang="en">
       <Head>
