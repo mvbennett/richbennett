@@ -1,3 +1,5 @@
+import FormButton from '@/components/FormButton'
+import FormContainer from '@/components/FormContainer'
 import { Inter } from '@next/font/google'
 import Head from 'next/head'
 
