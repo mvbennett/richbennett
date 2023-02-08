@@ -117,7 +117,7 @@ body {
 
 :root {
   --title-font: 'Montserrat', sans-serif;
-  --font-color: #004B58;
+  --font-color:   #012126;
   --background-color: #F0F9FD;
   --dark-background: #161718;
   --dark-font: #9FC0C6;
@@ -125,8 +125,8 @@ body {
 
 body {
   font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
-  background-color: #F0F9FD;
-  color: #004B58;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 .form-toggle {
@@ -170,7 +170,8 @@ a {
 
 .container {
   margin: 0 auto;
-  width: fit-content;
+  min-width: fit-content;
+  max-width: 1000px;
 }
 
 @media screen and (max-width: 500px) {
@@ -201,3 +202,5 @@ a {
     background-color: #2b3237;
   }
 } */
+
+/* #F0F0F0 possible project box bg */

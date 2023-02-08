@@ -16,11 +16,11 @@ const Bio = () => {
             <Image src={rich} alt="Rich Bennett" />
           </div>
           <div className="bio-info">
-            <h3>
+            {/* <h3>
               Hi, I{"\'"}m Rich Bennett
-            </h3>
+            </h3> */}
             <p>
-              Rich is a multi-instrumentalist, composer, producer, recording engineer and co-founder of Acme Hall Studios. Rich began playing guitar at the age of 12 and won a Bertelsmann award for composition as a high school senior, sending him off to NYU, where he studied jazz guitar. A decade of performing and writing saw Rich on tour internationally with a number of bands and as a solo artist. Some of his production credits include gothic metal group Sabbath Assembly, dream pop outfit Monocle, electronica artist Morgane Lhote (Stereolab, Hologram Teen), and singer/songwriter Rebecca Pronsky. Rich currently plays guitar in the newly reunited outsider/60s proto-punk group The Shaggs. His compositions have been featured on MTV and the Discovery Channel. Before opening Acme, Rich served on the guitar faculty at the prestigious Third Street Music Settlement and was the guitar instructor at PS 41 The Greenwich Village School for a decade. In his 20 years of teaching in New York City, Rich has kept his focus on imparting good technique. He has developed a reputation as a patient and flexible instructor with a broad knowledge of musical styles and eras.
+              Richard Bennett is an engineer, producer, and composer who has worked with bands diverse as The Shaggs, Hologram Teen, Mahogany, Rodney Cromwell, Alice Hubble, and Monocle. He is also one half of the Brazilian funk duo Limoncello (Far Out Recordings), and releases quirky space age jazz under the moniker “Roman Angelos”. His most recent record “Music For Underwater Supermarkets” was released in 2022 on Happy Robots Records and featured on BBC Radio 6.
             </p>
           </div>
         </div>
