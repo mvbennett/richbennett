@@ -77,7 +77,7 @@ const Form = ({ handleBlur, handleChange, handleSubmit, handleFocus }:props) => 
   return (
     <div className="form">
       <h2>
-        Contact Me to schedule a session:
+        Contact:
       </h2>
       <form onSubmit={handleSubmit}>
         <div className="row">

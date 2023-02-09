@@ -118,7 +118,8 @@ body {
 :root {
   --title-font: 'Montserrat', sans-serif;
   --font-color:   #012126;
-  --background-color: #F0F9FD;
+  /* --background-color: #F0F9FD; */
+  --background-color: #d1e1ea;
   --dark-background: #161718;
   --dark-font: #9FC0C6;
 }
