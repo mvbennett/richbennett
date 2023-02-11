@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -9,17 +11,21 @@
   display: flex;
   flex-direction: column;
   width: 300px;
-  background-color: #f0f9fd;
+  background-color: #ece8e4;
   border-radius: 5px;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 8px;
   box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.2);
+  font-family: "Nothing You Could Do", cursive, sans-serif;
+  font-size: 16px;
 }
 
 
 .project-album-cover {
   width: 100%;
   height: auto;
+  border: 1px solid white;
+  filter: hue-rotate(-10deg) saturate(80%) blur(.5px);
 }
 
 .project-title {
