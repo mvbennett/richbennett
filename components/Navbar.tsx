@@ -55,7 +55,3 @@ const Navbar = ({ page }:page) => {
 };
 
 export default Navbar;
-
-/* <span class="material-icons">
-close
-</span> */

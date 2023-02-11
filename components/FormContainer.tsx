@@ -45,18 +45,10 @@ const FormContainer = () => {
 
   const checkEmail = () => {
     const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
-    // console.log(`email in func: ${regexp.test(message.email)}`);
     return setEmailValid(regexp.test(message.email));
   }
 
   const checkValidity = () => {
-    // console.log(`name :${checkName()}`);
-    // console.log(`message: ${checkMessage()}`);
-    // console.log(`email: ${checkEmail()}`);
-    // console.log(`phone: ${checkPhone()}`);
-
-
-    // console.log(`full check: ${checkName() && checkMessage() && checkEmail()}`);
     checkName();
     checkEmail();
     checkPhone();
@@ -72,26 +64,21 @@ const FormContainer = () => {
   }
 
   const handleChange = (e :any) => {
-    // console.log(e.target.value);
     setMessage({...message, [e.target.name]: e.target.value})
     checkValidity();
   }
 
   const handleBlur = (e: any) => {
     console.log('blur handler');
-    // console.log(e.target.name);
     let isValid;
     switch (e.target.name) {
       case 'name':
-        // checkName();
         isValid = nameValid;
         break;
       case 'email':
-        // checkEmail();
         isValid = emailValid;
         break;
       case 'phone':
-        // checkPhone();
         isValid = phoneValid;
         break;
       case 'message':
@@ -118,7 +105,6 @@ const FormContainer = () => {
   const handleSubmit = (e :any) => {
     e.preventDefault()
     if (valid) {
-      // console.log(`this is your message: From: ${message.name}\n at ${message.email} & ${message.phone}\n content: ${message.message}`);
       setSubmitted(true)
       const from_name = message.name
       const phone = `(${message.phone[0]}${message.phone[1]}${message.phone[2]})${message.phone[3]}${message.phone[4]}${message.phone[5]}-${message.phone[6]}${message.phone[7]}${message.phone[8]}${message.phone[9]}`
@@ -126,22 +112,6 @@ const FormContainer = () => {
       const content = message.message
 
       const data = {from_name, phone, reply_to, content}
-      // fetch('/api', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'Accept': 'application/json'
-      //   },
-      //   credentials: 'same-origin',
-      //   body: JSON.stringify({data}),
-      // })
-      // .then((response) => response.json())
-      // .then((data) => {
-      //   console.log('Success:', data);
-      // })
-      // .catch((error) => {
-      //   console.error('Error:', error);
-      // })}
 
       emailjs.send(
         `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
