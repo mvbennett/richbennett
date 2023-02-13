@@ -131,6 +131,9 @@ body {
 }
 
 .form-toggle {
+  position: absolute;
+  right: 16px;
+  top: 16px;
   background: rgba(0,0,0,0);
   padding: 16px 16px;
   border: 1px solid var(--font-color);

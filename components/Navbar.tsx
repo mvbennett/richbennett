@@ -17,6 +17,9 @@ const Navbar = ({ page }:page) => {
       setVisibility('closed');
     }
   }
+  const formToggle = () => {
+    alert('clicked!!!')
+  }
   return (
     <div className={`${page}-navbar`}>
       <div className="title-burger">
@@ -47,6 +50,11 @@ const Navbar = ({ page }:page) => {
             <Link href="/about">
               About
             </Link>
+          </li>
+          <li className="nav-link">
+          <button className="form-toggle" onClick={formToggle}>
+            Contact
+          </button>
           </li>
         </ul>
       </div>
