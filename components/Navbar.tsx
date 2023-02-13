@@ -2,6 +2,7 @@ import React from "react";
 import Link from 'next/link';
 
 import { useState } from "react";
+import FormContainer from "./FormContainer";
 
 
 interface page {
@@ -9,6 +10,7 @@ interface page {
 }
 
 const Navbar = ({ page }:page) => {
+  const [formPopup, setFormPopup] = useState(false)
   const [visibility, setVisibility] = useState('closed')
   const handleClick = () => {
     if (visibility === 'closed') {
@@ -18,7 +20,7 @@ const Navbar = ({ page }:page) => {
     }
   }
   const formToggle = () => {
-    alert('clicked!!!')
+    setFormPopup(!formPopup)
   }
   return (
     <div className={`${page}-navbar`}>
@@ -51,13 +53,29 @@ const Navbar = ({ page }:page) => {
               About
             </Link>
           </li>
-          <li className="nav-link">
-          <button className="form-toggle" onClick={formToggle}>
-            Contact
-          </button>
-          </li>
+          {
+            page === 'home' ?
+            <li className="nav-link">
+              <button className="form-toggle" onClick={formToggle}>
+                Contact
+              </button>
+            </li>
+            :
+            <></>
+          }
         </ul>
       </div>
+      {
+        formPopup ?
+        <div className="form-popup">
+          <button className="popup-close" onClick={formToggle}>
+            x
+          </button>
+          <FormContainer />
+        </div>
+        :
+        <></>
+      }
     </div>
   );
 };
