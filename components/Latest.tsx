@@ -1,13 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { useState } from "react";
 
 import Post from "./Post";
-import FormContainer from "./FormContainer";
 
 const Latest = ({ latestPosts }: any) => {
-  const [formDisplay, setFormDisplay] = useState(false);
-
   const latestPostsList = latestPosts.map((post: any) => {
     return {
       title: post.fields.title,
@@ -21,7 +17,6 @@ const Latest = ({ latestPosts }: any) => {
     <div>
       <Navbar page="home" />
       <div className="container">
-        {formDisplay ? <FormContainer /> : ''}
         {posts}
       </div>
     </div>
