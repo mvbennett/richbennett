@@ -16,6 +16,23 @@
   height: auto;
 }
 
+.post-image {
+  position: relative;
+  width: 800px;
+  height: 800px;
+}
+
+.post-image > div {
+  position: unset !important;
+}
+
+.latest-image {
+  object-fit: cover;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
 @media screen and (max-width: 800px) {
   .latest-post {
     width: 100%;
