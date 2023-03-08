@@ -1,5 +1,3 @@
-import { HtmlHTMLAttributes, useState } from "react";
-
 interface props {
     handleBlur: any,
     handleChange: any,

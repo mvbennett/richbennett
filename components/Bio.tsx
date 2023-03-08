@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Image from "next/image";
 
 import rich from '../public/images/rich.jpg'
-import Form from "./Form";
 import FormContainer from "./FormContainer";
 
 const Bio = () => {

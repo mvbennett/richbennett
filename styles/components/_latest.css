@@ -33,12 +33,24 @@
   height: unset !important;
 }
 
-@media screen and (max-width: 800px) {
+.latest-post a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 850px) {
   .latest-post {
     width: 100%;
   }
 
-  .latest-img {
-    max-width: 100%;
+  .post-image {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .post-image {
+    width: 350px;
+    height: 350px;
   }
 }
