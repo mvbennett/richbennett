@@ -17,13 +17,6 @@ const Latest = ({ latestPosts }: any) => {
   })
 
   const posts = latestPostsList.map((post: any) => <Post post={post} key={post.title} />)
-  const handleClick = () => {
-    if (formDisplay) {
-      setFormDisplay(false);
-    } else {
-      setFormDisplay(true);
-    }
-  }
   return (
     <div>
       <Navbar page="home" />

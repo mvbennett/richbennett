@@ -69,7 +69,6 @@ const FormContainer = () => {
   }
 
   const handleBlur = (e: any) => {
-    console.log('blur handler');
     let isValid;
     switch (e.target.name) {
       case 'name':
@@ -87,8 +86,6 @@ const FormContainer = () => {
       default:
         break;
     }
-    console.log(`isValid: ${isValid}`);
-    console.log(`phoneValid: ${phoneValid}`);
 
 
     if (isValid) {
