@@ -10,12 +10,6 @@
 @import url('components/_productions.css');
 @import url('components/_projects.css');
 
-/* rpm fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap'); */
-
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -118,6 +112,7 @@ body {
 :root {
   --title-font: 'Montserrat', sans-serif;
   --font-color:   #012126;
+  --rpm-font: 'Comfortaa', 'monospace';
   /* --background-color: #F0F9FD; */
   --background-color: #d1e1ea;
   --dark-background: #161718;

@@ -39,7 +39,6 @@ const FormContainer = () => {
 
   const checkPhone = () => {
     const phonexp = RegExp(/^\d*$/);
-    console.log(`phone # length: ${message.phone.length}`);
     return setPhoneValid(phonexp.test(message.phone) && message.phone.length == 10);
   }
 

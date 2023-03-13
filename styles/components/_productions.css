@@ -20,7 +20,7 @@
   align-content: center;
   gap: 8px;
   margin-left: 16px;
-  font-family: 'Comfortaa', 'monospace';
+  font-family: var(--rpm-font);
 }
 
 .production-icons > img {
