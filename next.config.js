@@ -1,3 +1,4 @@
+const withWorkbox = require('next-with-workbox')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -6,4 +7,15 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+const plugins = [
+   withWorkbox,
+ ]
+
+ module.exports = plugins.reduce((acc, curr) => {
+   if (curr.name === 'withWorkbox') {
+     return curr(acc, { workbox: { swSrc: 'service-worker.js' } })
+   }
+   return curr(acc)
+ }, nextConfig)
+
+// module.exports = nextConfig
