@@ -1,11 +1,11 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface props {
   production: {
     link: string,
     title: string,
-    img: any,
+    img: StaticImageData,
     artist: string,
     icons: string[]
   }
