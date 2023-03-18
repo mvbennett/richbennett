@@ -22,7 +22,6 @@ export async function getStaticProps() {
   }
 }
 
-
 export default function Home({ latestPosts }: any) {
   return (
     <>

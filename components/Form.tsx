@@ -1,10 +1,10 @@
-import { SyntheticEvent } from "react";
+import { FocusEvent, ChangeEvent, FormEvent } from "react"
 
 interface props {
-  handleBlur: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-  handleChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void,
-  handleFocus: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleBlur: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void,
+  handleFocus: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
   }
 
 
@@ -25,7 +25,7 @@ const Form = ({ handleBlur, handleChange, handleSubmit, handleFocus }:props) => 
             <input type="text" name="email" placeholder="rich@richbennettproductions.com" onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus} />
           </label>
           <label htmlFor="phone number">
-            Phone number:
+            Phone number (optional):
             <input type="text" name="phone" placeholder="2128675309" onChange={handleChange} onBlur={handleBlur} onFocus={handleFocus} />
           </label>
         </div>

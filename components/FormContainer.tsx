@@ -37,17 +37,16 @@ const FormContainer = () => {
   const checkValidity = useCallback(() => {
     const nameValid = checkName();
     const messageValid = checkMessage();
-    const phoneValid = checkPhone();
     const emailValid = checkEmail();
 
-    if (nameValid && messageValid && emailValid && phoneValid) {
+    if (nameValid && messageValid && emailValid) {
       const disabled = document.querySelector('.disabled');
       if (disabled !== null) disabled.classList.remove('disabled');
       setFormValid(true);
     } else {
       setFormValid(false);
     }
-  },[checkEmail, checkMessage, checkPhone, checkName]);
+  },[checkEmail, checkMessage, checkName]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setMessage({...message, [event.target.name]: event.target.value})
