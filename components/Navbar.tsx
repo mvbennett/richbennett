@@ -9,7 +9,7 @@ interface page {
   page: string;
 }
 
-const Navbar = ({ page }:page) => {
+const Navbar = ({ page }: page) => {
   const [formPopup, setFormPopup] = useState(false)
   const [visibility, setVisibility] = useState('closed')
   const handleClick = () => {

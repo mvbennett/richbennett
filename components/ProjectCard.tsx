@@ -9,7 +9,7 @@ interface props {
   }
 }
 
-const ProjectCard = ({ project: {title, img, link} }:props) => {
+const ProjectCard = ({ project: {title, img, link} }: props) => {
   return (
     <div className="project-card">
       <a href={link} target="_blank" rel="noreferrer">

@@ -15,15 +15,16 @@ const Projects = () => {
   });
 
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const underlined = document.querySelector('.underline');
     if (underlined !== null) underlined.classList.remove('underline');
 
-    e.target.classList.add('underline');
+    const target = e.target as HTMLButtonElement
+    target.classList.add('underline');
     setProjects(projectsList.filter((p) => {
-      return p.artist === e.target.value
+      return p.artist === target.value
     }))
   }
 

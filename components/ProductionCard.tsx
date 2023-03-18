@@ -11,7 +11,7 @@ interface props {
   }
 }
 
-const ProductionCard = ({production: {title, link, img, artist, icons}}:props) => {
+const ProductionCard = ({production: {title, link, img, artist, icons}}: props) => {
   return (
     <div className="production-card">
       <a href={link} target="_blank" rel="noreferrer">

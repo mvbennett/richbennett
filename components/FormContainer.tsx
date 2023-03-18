@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Form from './Form';
 import emailjs from '@emailjs/browser'
 
@@ -10,99 +10,74 @@ const FormContainer = () => {
     message: ''
   });
 
-  const [valid, setValid] = useState(false);
+  const [formValid, setFormValid] = useState(false);
 
   const [submitted, setSubmitted] = useState(false);
 
-  const [nameValid, setNameValid] = useState(false);
+  const [errorOccurred, setErrorOccurred] = useState(false);
 
-  const [emailValid, setEmailValid] = useState(false);
+  const checkName = useCallback(() => {
+    return message.name.length > 2;
+  }, [message]);
 
-  const [phoneValid, setPhoneValid] = useState(false);
+  const checkMessage = useCallback(() => {
+    return message.message.length > 10;
+  }, [message]);
 
-  const [messageValid, setMessageValid] = useState(false);
+  const checkPhone = useCallback(() => {
+    const phonexp = /^\d{10}$/;
+    return phonexp.test(message.phone);
+  }, [message]);
 
-  const checkName = () => {
-    return setNameValid(message.name.length > 2);
-  }
+  const checkEmail = useCallback(() => {
+    const regexp = /(\w|\d)*@(\w|\d){2,}\.(\w|\d){2,}$/;
+    return regexp.test(message.email);
+  }, [message]);
 
-  const checkMessage = () => {
-    return setMessageValid(message.message.length > 10);
-  }
-
-  const checkPhone = (): void => {
-    const phonexp = RegExp(/^\d*$/);
-    return setPhoneValid(phonexp.test(message.phone) && message.phone.length == 10);
-  }
-
-  const checkEmail = (): void => {
-    const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
-    return setEmailValid(regexp.test(message.email));
-  }
-
-  const checkValidity = (): void => {
-    checkName();
-    checkEmail();
-    checkPhone();
-    checkMessage();
+  const checkValidity = useCallback(() => {
+    const nameValid = checkName();
+    const messageValid = checkMessage();
+    const phoneValid = checkPhone();
+    const emailValid = checkEmail();
 
     if (nameValid && messageValid && emailValid && phoneValid) {
       const disabled = document.querySelector('.disabled');
       if (disabled !== null) disabled.classList.remove('disabled');
-      setValid(true);
+      setFormValid(true);
     } else {
-      setValid(false);
+      setFormValid(false);
     }
-  }
+  },[checkEmail, checkMessage, checkPhone, checkName]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setMessage({...message, [event.target.name]: event.target.value})
-    checkValidity();
-  }
-
-  const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-    let isValid;
-    const target = event.target as HTMLInputElement
-    switch (target.name) {
-      case 'name':
-        isValid = nameValid;
-        break;
-      case 'email':
-        isValid = emailValid;
-        break;
-      case 'phone':
-        isValid = phoneValid;
-        break;
-      case 'message':
-        isValid = messageValid;
-        break;
-      default:
-        break;
-    }
-
-
-    if (isValid) {
-      event.target.classList.remove('invalid-input')
-    } else {
-      event.target.classList.add('invalid-input')
-    }
-  }
+  };
 
   const handleFocus = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     event.target.classList.remove('invalid-input');
-  }
+  };
+
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const target = event.target as HTMLInputElement
+    if (target.name === 'name') {
+      target.classList.toggle('invalid-input', !checkName());
+    } else if (target.name === 'email') {
+      target.classList.toggle('invalid-input', !checkEmail());
+    } else if (target.name === 'phone') {
+      target.classList.toggle('invalid-input', !checkPhone());
+    } else if (target.name === 'message') {
+      target.classList.toggle('invalid-input', !checkMessage());
+    }
+  };
 
   useEffect(() => {
-    checkEmail();
-    checkMessage();
-    checkName();
-    checkPhone();
-  })
+    checkValidity();
+  }, [message, checkValidity]);
+
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    if (valid) {
-      setSubmitted(true)
+    if (formValid) {
       const from_name = message.name
       const phone = `(${message.phone[0]}${message.phone[1]}${message.phone[2]})${message.phone[3]}${message.phone[4]}${message.phone[5]}-${message.phone[6]}${message.phone[7]}${message.phone[8]}${message.phone[9]}`
       const reply_to = message.email
@@ -110,23 +85,25 @@ const FormContainer = () => {
 
       const data = {from_name, phone, reply_to, content}
 
-      emailjs.send(
-        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
-        {from_name, phone, reply_to, content},
-        `${process.env.NEXT_PUBLIC_EMAIL_KEY}`
-      )
-      .then((response: any) => {
-        // console.log('SUCCESS!', response.status, response.text);
-      })
-      .catch((err: any) => {
-        // console.log('FAILED...', err);
-      });
-    } else {
-      // console.log('invalid!');
-    }
+      const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID as string
+      const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID as string
+      const emailKey = process.env.NEXT_PUBLIC_EMAIL_KEY as string
 
-  }
+      emailjs.send(
+        serviceId,
+        templateId,
+        data,
+        emailKey
+      )
+      .then(() => {
+        setErrorOccurred(false)
+        setSubmitted(true)
+      })
+      .catch(() => {
+        setErrorOccurred(true)
+      });
+    }
+  };
   return (
       submitted
       ?
@@ -136,7 +113,10 @@ const FormContainer = () => {
         </h2>
       </div>
       :
-      <Form handleBlur={handleBlur} handleChange={handleChange} handleSubmit={handleSubmit} handleFocus={handleFocus} />
+      <>
+        {errorOccurred ? <h2 style={{color: 'red'}}>An error occurred when sending your email</h2> : ''}
+        <Form handleBlur={handleBlur} handleChange={handleChange} handleSubmit={handleSubmit} handleFocus={handleFocus} />
+      </>
   );
 };
 
