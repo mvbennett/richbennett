@@ -1,8 +1,10 @@
+import { SyntheticEvent } from "react";
+
 interface props {
-    handleBlur: any,
-    handleChange: any,
-    handleSubmit: any,
-    handleFocus: any,
+  handleBlur: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void,
+  handleFocus: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
   }
 
 

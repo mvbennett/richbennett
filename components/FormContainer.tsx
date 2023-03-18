@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from './Form';
 import emailjs from '@emailjs/browser'
 
@@ -22,13 +22,6 @@ const FormContainer = () => {
 
   const [messageValid, setMessageValid] = useState(false);
 
-  useEffect(() => {
-    checkEmail();
-    checkMessage();
-    checkName();
-    checkPhone();
-  })
-
   const checkName = () => {
     return setNameValid(message.name.length > 2);
   }
@@ -37,17 +30,17 @@ const FormContainer = () => {
     return setMessageValid(message.message.length > 10);
   }
 
-  const checkPhone = () => {
+  const checkPhone = (): void => {
     const phonexp = RegExp(/^\d*$/);
     return setPhoneValid(phonexp.test(message.phone) && message.phone.length == 10);
   }
 
-  const checkEmail = () => {
+  const checkEmail = (): void => {
     const regexp = RegExp(/(\w|\d)*@(\w|\d)*\.(\w|\d)*/)
     return setEmailValid(regexp.test(message.email));
   }
 
-  const checkValidity = () => {
+  const checkValidity = (): void => {
     checkName();
     checkEmail();
     checkPhone();
@@ -62,14 +55,15 @@ const FormContainer = () => {
     }
   }
 
-  const handleChange = (e :any) => {
-    setMessage({...message, [e.target.name]: e.target.value})
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    setMessage({...message, [event.target.name]: event.target.value})
     checkValidity();
   }
 
-  const handleBlur = (e: any) => {
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     let isValid;
-    switch (e.target.name) {
+    const target = event.target as HTMLInputElement
+    switch (target.name) {
       case 'name':
         isValid = nameValid;
         break;
@@ -88,18 +82,25 @@ const FormContainer = () => {
 
 
     if (isValid) {
-      e.target.classList.remove('invalid-input')
+      event.target.classList.remove('invalid-input')
     } else {
-      e.target.classList.add('invalid-input')
+      event.target.classList.add('invalid-input')
     }
   }
 
-  const handleFocus = (e: any) => {
-    e.target.classList.remove('invalid-input');
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    event.target.classList.remove('invalid-input');
   }
 
-  const handleSubmit = (e :any) => {
-    e.preventDefault()
+  useEffect(() => {
+    checkEmail();
+    checkMessage();
+    checkName();
+    checkPhone();
+  })
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
     if (valid) {
       setSubmitted(true)
       const from_name = message.name
