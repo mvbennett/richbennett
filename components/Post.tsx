@@ -16,8 +16,8 @@ const Post = ({post: { img, title, content } }:props) => {
         <Image className="latest-img" src={img} alt={title} priority={true} fill objectFit="contain" />
       </div>
       <div className="latest-post-content">
-      <h2>{title}</h2>
-      {documentToReactComponents(content)}
+        <h2>{title}</h2>
+        {documentToReactComponents(content)}
       </div>
     </div>
   )

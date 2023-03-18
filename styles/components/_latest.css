@@ -9,6 +9,11 @@
 
 .latest-post-content {
   margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.latest-post-content h2 {
+  text-align: center;
 }
 
 .latest-img {
