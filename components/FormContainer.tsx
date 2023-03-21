@@ -62,14 +62,19 @@ const FormContainer = () => {
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const target = event.target as HTMLInputElement
-    if (target.name === 'name') {
-      target.classList.toggle(styles.invalidInput, !checkName());
-    } else if (target.name === 'email') {
-      target.classList.toggle(styles.invalidInput, !checkEmail());
-    } else if (target.name === 'phone') {
-      target.classList.toggle(styles.invalidInput, !checkPhone());
-    } else if (target.name === 'message') {
-      target.classList.toggle(styles.invalidInput, !checkMessage());
+    switch (target.name) {
+      case 'name':
+        target.classList.toggle(styles.invalidInput, !checkName());
+        break;
+      case 'email':
+        target.classList.toggle(styles.invalidInput, !checkEmail());
+        break;
+      case 'phone':
+        target.classList.toggle(styles.invalidInput, !checkPhone());
+        break;
+      case 'message':
+        target.classList.toggle(styles.invalidInput, !checkMessage());
+        break;
     }
   };
 
