@@ -29,7 +29,7 @@ self.addEventListener('fetch', (event) => {
 
   const createCacheFirstStrategy = ({items, maxAgeSeconds, maxEntries}) => {
     items.map((item) => {
-// make it specific to your API
+      // make it specific to your API
       const URLIncludesItem = pathname.includes('/api/v1/') && pathname.includes(item)
       if (URLIncludesItem) {
         // if modify method, fetch fresh data:
@@ -40,7 +40,7 @@ self.addEventListener('fetch', (event) => {
             new workbox.strategies.CacheFirst({
               cacheName: item,
               plugins: [
-// use both: time restrictions and max entries
+                // use both: time restrictions and max entries
                 new workbox.expiration.ExpirationPlugin({
                   maxAgeSeconds,
                   maxEntries,
