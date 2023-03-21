@@ -3,6 +3,8 @@ import ProductionCard from "./ProductionCard";
 import Navbar from "./Navbar";
 
 import productionList from '../content/productions';
+import styles from '../styles/components/Productions.module.css';
+
 
 const Productions = () => {
   const productions = productionList.map((production) => {

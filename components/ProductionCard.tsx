@@ -1,6 +1,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
+import styles from '../styles/components/Productions.module.css';
+
 interface props {
   production: {
     link: string,
@@ -13,18 +15,18 @@ interface props {
 
 const ProductionCard = ({production: {title, link, img, artist, icons}}: props) => {
   return (
-    <div className="production-card">
+    <div className={styles.card}>
       <a href={link} target="_blank" rel="noreferrer">
-        <Image src={img} alt={title} className="album-cover" />
+        <Image src={img} alt={title} className={styles.albumCover} />
       </a>
       <a href={link} target="_blank" rel="noreferrer">
-        <h3 className="production-title">
+        <h3 className={styles.title}>
           {title}
           -
           {artist}
         </h3>
       </a>
-      <div className="production-icons">
+      <div className={styles.icons}>
         {icons === undefined ? <div /> : icons.join(' / ')}
       </div>
     </div>
