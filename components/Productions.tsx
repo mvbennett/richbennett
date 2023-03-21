@@ -10,7 +10,7 @@ const Productions = () => {
   });
   return (
     <div>
-      <Navbar page="secondary" />
+      <Navbar home={false} />
       <div className="productions container">
         <h2>Recording, Producing, Mixing</h2>
         {productions}

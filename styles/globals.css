@@ -8,7 +8,7 @@
 @import url('components/_latest.css');
 @import url('components/_navbar.css');
 @import url('components/_productions.css');
-@import url('components/_projects.css');
+/* @import url('components/_projects.css'); */
 
 /* :root {
   --max-width: 1100px;
@@ -125,7 +125,7 @@ body {
   color: var(--font-color);
 }
 
-.form-toggle {
+/* .form-toggle {
   position: absolute;
   right: 16px;
   top: 16px;
@@ -177,7 +177,7 @@ body {
     left: 0;
     right: 0;
   }
-}
+} */
 
 .dark {
   background-color: var(--dark-background);
@@ -222,10 +222,10 @@ a {
   text-decoration: underline;
 }
 
-.toggle {
+/* .toggle {
   position: absolute;
   right: 12px;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   body {

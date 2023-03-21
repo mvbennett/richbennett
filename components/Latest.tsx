@@ -15,7 +15,7 @@ const Latest = ({ latestPosts }: any) => {
   const posts = latestPostsList.map((post: any) => <Post post={post} key={post.title} />)
   return (
     <div>
-      <Navbar page="home" />
+      <Navbar home={true} />
       <div className="container">
         {posts}
       </div>

@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import Form from './Form';
 import emailjs from '@emailjs/browser'
 
+import styles from '../styles/components/Form.module.css';
+
 const FormContainer = () => {
   const [message, setMessage] = useState({
     name: '',
@@ -39,11 +41,13 @@ const FormContainer = () => {
     const messageValid = checkMessage();
     const emailValid = checkEmail();
 
+
+    const sendBtn = document.querySelector(`.${styles.sendBtn}`)
     if (nameValid && messageValid && emailValid) {
-      const disabled = document.querySelector('.disabled');
-      if (disabled !== null) disabled.classList.remove('disabled');
+      sendBtn?.classList.remove(styles.disabled);
       setFormValid(true);
     } else {
+      sendBtn?.classList.add(styles.disabled)
       setFormValid(false);
     }
   },[checkEmail, checkMessage, checkName]);
@@ -53,19 +57,19 @@ const FormContainer = () => {
   };
 
   const handleFocus = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    event.target.classList.remove('invalid-input');
+    event.target.classList.remove(styles.invalidInput);
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const target = event.target as HTMLInputElement
     if (target.name === 'name') {
-      target.classList.toggle('invalid-input', !checkName());
+      target.classList.toggle(styles.invalidInput, !checkName());
     } else if (target.name === 'email') {
-      target.classList.toggle('invalid-input', !checkEmail());
+      target.classList.toggle(styles.invalidInput, !checkEmail());
     } else if (target.name === 'phone') {
-      target.classList.toggle('invalid-input', !checkPhone());
+      target.classList.toggle(styles.invalidInput, !checkPhone());
     } else if (target.name === 'message') {
-      target.classList.toggle('invalid-input', !checkMessage());
+      target.classList.toggle(styles.invalidInput, !checkMessage());
     }
   };
 

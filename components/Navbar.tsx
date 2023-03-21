@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { useState } from "react";
 import FormContainer from "./FormContainer";
 
+import styles from '../styles/components/Navbar.module.css';
+import { title } from "process"; //what?
 
-interface page {
-  page: string;
+interface home {
+  home: boolean;
 }
 
-const Navbar = ({ page }: page) => {
+const Navbar = ({ home }: home) => {
   const [formPopup, setFormPopup] = useState(false)
   const [visibility, setVisibility] = useState('closed')
   const handleClick = () => {
@@ -23,40 +25,40 @@ const Navbar = ({ page }: page) => {
     setFormPopup(!formPopup)
   }
   return (
-    <div className={`${page}-navbar`}>
-      <div className="title-burger">
-        <Link href="/" className="nav-title-link">
-          <h1 className={`${page}-nav-title nav-title`}>
+    <div className={home ? `${styles.home}` : `${styles.secondary}`}>
+      <div className={styles.titleBurger}>
+        <Link href="/" className={styles.titleLink}>
+          <h1 className={home ? `${styles.homeTitle} ${styles.title}` : `${styles.secondaryTitle} ${styles.title}`}>
             Rich Bennett
           </h1>
         </Link>
-        <button type="button" className="hamburger" onClick={handleClick}>
+        <button type="button" className={styles.hamburger} onClick={handleClick}>
         <span className="material-symbols-outlined">
           {visibility === 'closed' ? 'menu' : 'close'}
         </span>
         </button>
       </div>
-      <div className="navbar-collapse">
-        <ul className={`${page}-nav-links ${visibility === 'open' ? '' : 'collapse'}`}>
-          <li className="nav-link">
+      <div className={styles.expand}>
+        <ul className={`${home ? styles.homeLinks : styles.secondaryLinks} ${visibility === 'open' ? null : styles.collapse}`}>
+          <li className={styles.link}>
             <Link href="/projects">
               Projects
             </Link>
           </li>
-          <li className="nav-link">
+          <li className={styles.link}>
             <Link href="/productions">
               Production
             </Link>
           </li>
-          <li className="nav-link">
+          <li className={styles.link}>
             <Link href="/about">
               About
             </Link>
           </li>
           {
-            page === 'home' ?
-            <li className="nav-link">
-              <button className="form-toggle" onClick={formToggle}>
+            home ?
+            <li className={styles.link}>
+              <button className={styles.toggle} onClick={formToggle}>
                 Contact
               </button>
             </li>
@@ -67,8 +69,8 @@ const Navbar = ({ page }: page) => {
       </div>
       {
         formPopup ?
-        <div className="form-popup">
-          <button className="popup-close" onClick={formToggle}>
+        <div className={styles.popup}>
+          <button className={styles.popupClose} onClick={formToggle}>
             x
           </button>
           <FormContainer />
