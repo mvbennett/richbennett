@@ -5,7 +5,6 @@ import { useState } from "react";
 import FormContainer from "./FormContainer";
 
 import styles from '../styles/components/Navbar.module.css';
-import { title } from "process"; //what?
 
 interface home {
   home: boolean;
