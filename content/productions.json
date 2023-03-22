@@ -1,0 +1,116 @@
+{
+  "productions": [
+    {
+      "title": "Memory Box",
+      "artist": "Rodney Cromwell",
+      "img": "../public/images/memory_box.jpg",
+      "link": "https://open.spotify.com/album/5undXq2henqQw2lBmqcEM8",
+      "icons": ["p","m"]
+    },
+    {
+      "title": "Nong Voru / Fake Love",
+      "artist": "Alfred Kpebesaane and Brittany Anjou",
+      "img": "../public/images/fake_love.jpg",
+      "link": "https://open.spotify.com/album/50n3k94DN57jjmCKWPinYd",
+      "icons": ["r","p","m"]
+    },
+    {
+      "title": "Pizza Conspiracy",
+      "artist": "Hologram Teen",
+      "img": "../public/images/pizza_conspiracy.jpg",
+      "link": "https://open.spotify.com/album/0yWP0bki3piEYrWzRZH369",
+      "icons": ["r","p","m"]
+    },
+    {
+      "title": "Tiny Language",
+      "artist": "Written in Stars",
+      "img": "../public/images/written_stars.jpg",
+      "link": "https://open.spotify.com/album/4Bl2sZmRKuLHR4RWrA0QOe",
+      "icons": ["r","m"]
+    },
+    {
+      "title": "The Last American",
+      "artist": "The President Lincoln",
+      "img": "../public/images/last_american.jpg",
+      "link": "https://open.spotify.com/artist/4QLj9lFZZHl8MoBHUBl63G",
+      "icons": []
+    },
+    {
+      "title": "No Mans Land",
+      "artist": "Karen Dahlstrom",
+      "img": "../public/images/no_mans_land.jpg",
+      "link": "https://open.spotify.com/album/5rdxNUItJDMvRgKdwh52DT",
+      "icons": ["r","m"]
+    },
+    {
+      "title": "If U Must Dance",
+      "artist": "Sinosa",
+      "img": "../public/images/must_dance.jpg",
+      "link": "https://open.spotify.com/album/2yrkWy7W8NZgyJ94IBdRhH",
+      "icons": ["m"]
+    },
+    {
+      "title": "Between the Funk and the Fear",
+      "artist": "Hologram Teen",
+      "img": "../public/images/between_the_funk.jpg",
+      "link": "https://open.spotify.com/album/0b2kXupVrhddF7wMPZwl63?si=jxb98IRcTY6pTBG12BCUvA",
+      "icons": ["r","p","m"]
+    },
+    {
+      "title": "Comrades",
+      "artist": "Rodney Cromwell",
+      "img": "../public/images/comrades.jpg",
+      "link": "https://open.spotify.com/album/7fr75k16inE48Vw0Lr3kYa",
+      "icons": ["p","m"]
+    },
+    {
+      "title": "Unhinged",
+      "artist": "Elijah Shiffer and The Robber Crabs",
+      "img": "../public/images/unhinged.jpg",
+      "link": "https://elijahshiffer.bandcamp.com/album/unhinged",
+      "icons": ["r"]
+    },
+    {
+      "title": "Known Objects",
+      "artist": "Rebecca Pronsky",
+      "img": "../public/images/known_objects.jpg",
+      "link": "https://open.spotify.com/album/1ekf1fvOKJGFs14cHuFHfo",
+      "icons": ["r","p","m"]
+    },
+    {
+      "title": "Animals",
+      "artist": "Albis",
+      "img": "../public/images/animals.jpg",
+      "link": "https://open.spotify.com/album/0PnhlX8IoxTFuhH7elH46v",
+      "icons": ["r"]
+    },
+    {
+      "title": "All These Dotted Lines",
+      "artist": "Beverly Strokes",
+      "img": "../public/images/dotted_lines.jpg",
+      "link": "https://open.spotify.com/album/0TWtAD4faheODQdNQLf1ra",
+      "icons": ["r","m"]
+    },
+    {
+      "title": "Rubber Poultry",
+      "artist": "The New York Fowl Harmonic",
+      "img": "../public/images/rubber_poultry.jpg",
+      "link": "https://thenewyorkfowlharmonic.bandcamp.com/album/rubber-poultry",
+      "icons": ["r"]
+    },
+    {
+      "title": "Only Daughter",
+      "artist": "Rebecca Pronsky",
+      "img": "../public/images/only_daughter.jpg",
+      "link": "https://open.spotify.com/artist/1F05qDisbC9yIwLOxP1PPk",
+      "icons": ["p"]
+    },
+    {
+      "title": "Viewfinder",
+      "artist": "Rebecca Pronsky",
+      "img": "../public/images/viewfinder.jpg",
+      "link": "https://open.spotify.com/album/3BXcgIaH2SqYmVaxnByjbU",
+      "icons": ["p"]
+    }
+  ]
+}
