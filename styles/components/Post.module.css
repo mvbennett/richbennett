@@ -1,4 +1,4 @@
-.latest-post {
+.post {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,54 +7,54 @@
   text-align: justify;
 }
 
-.latest-post-content {
+.content {
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
-.latest-post-content h2 {
+.content h2 {
   text-align: center;
 }
 
-.latest-img {
+.img {
   width: 800px;
   height: auto;
 }
 
-.post-image {
+.image {
   position: relative;
   width: 800px;
   height: 800px;
 }
 
-.post-image > div {
+.image > div {
   position: unset !important;
 }
 
-.latest-image {
+/* .latestImage {
   object-fit: cover;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
-}
+} */
 
-.latest-post a:hover {
+.post a:hover {
   text-decoration: underline;
 }
 
 @media screen and (max-width: 850px) {
-  .latest-post {
+  .post {
     width: 100%;
   }
 
-  .post-image {
+  .image {
     width: 600px;
     height: 600px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .post-image {
+  .image {
     width: 350px;
     height: 350px;
   }

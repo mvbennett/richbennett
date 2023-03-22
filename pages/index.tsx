@@ -13,6 +13,7 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
   })
 
+
   const res = await client.getEntries({ content_type: 'latestPost' });
 
   return {
