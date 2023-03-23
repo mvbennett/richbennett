@@ -1,13 +1,14 @@
-import React from "react";
 import ProjectCard from "./ProjectCard";
 import Navbar from "./Navbar";
 import { useState } from "react";
 
-import projectsList from '../content/projects';
+import projectsJson from '../content/projects.json';
 
 import styles from '../styles/components/Projects.module.css';
 
 const Projects = () => {
+  const projectsList = projectsJson['projects'];
+
   const [projects, setProjects] = useState((projectsList.filter((p) => {
     return p.artist === 'Roman Angelos'
   })))

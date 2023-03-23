@@ -21,10 +21,13 @@
   justify-self: center;
 }
 
+.album {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
 
-.albumCover {
-  width: 100%;
-  height: auto;
+.cover {
   border: 1px solid white;
   filter: hue-rotate(-10deg) saturate(80%) blur(.5px);
 }
