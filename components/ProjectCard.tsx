@@ -16,7 +16,7 @@ const ProjectCard = ({ project: {title, img, link} }: props) => {
     <div className={styles.card}>
       <a href={link} target="_blank" rel="noreferrer">
         <div className={styles.album}>
-          <Image src={img} alt={title} className={styles.cover} fill style={{ objectFit: 'contain'}} sizes="(max-width: 800px) 350px" />
+          <Image src={img} alt={title} className={styles.cover} fill style={{ objectFit: 'contain'}} sizes="300px" />
         </div>
         <h3 className={styles.title}>
           {title}

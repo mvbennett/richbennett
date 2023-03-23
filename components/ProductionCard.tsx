@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import styles from '../styles/components/Productions.module.css';
 
@@ -7,7 +7,7 @@ interface props {
   production: {
     link: string,
     title: string,
-    img: StaticImageData,
+    img: string,
     artist: string,
     icons: string[]
   }
@@ -17,7 +17,9 @@ const ProductionCard = ({production: {title, link, img, artist, icons}}: props) 
   return (
     <div className={styles.card}>
       <a href={link} target="_blank" rel="noreferrer">
-        <Image src={img} alt={title} className={styles.albumCover} />
+        <div className={styles.album}>
+          <Image src={img} alt={title} fill style={{ objectFit: 'contain'}} sizes="100px" />
+        </div>
       </a>
       <a href={link} target="_blank" rel="noreferrer">
         <h3 className={styles.title}>
