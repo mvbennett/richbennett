@@ -1,3 +1,13 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  max-width: 600px;
+}
+
 .div {
   font-size: 10px;
   color: #cccccc;
