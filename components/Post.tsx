@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import styles from '../styles/components/Latest.module.css';
+import styles from '../styles/components/Post.module.css';
 
 interface props {
   post: {

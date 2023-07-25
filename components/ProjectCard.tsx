@@ -6,7 +6,7 @@ import styles from '../styles/components/Projects.module.css';
 interface props {
   project: {
     title: string,
-    img: StaticImageData,
+    img: string,
     link: string
   }
 }
@@ -15,7 +15,9 @@ const ProjectCard = ({ project: {title, img, link} }: props) => {
   return (
     <div className={styles.card}>
       <a href={link} target="_blank" rel="noreferrer">
-        <Image src={img} alt={title} className={styles.albumCover} />
+        <div className={styles.album}>
+          <Image src={img} alt={title} className={styles.cover} fill style={{ objectFit: 'contain'}} sizes="300px" />
+        </div>
         <h3 className={styles.title}>
           {title}
         </h3>

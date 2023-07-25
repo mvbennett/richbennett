@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "img": "/images/underwater_supermarkets.jpg",
+      "title": "Music for Underwater Supermarkets",
+      "link": "https://open.spotify.com/album/7xJfTkpi8FhHiCwhmMJXMO?si=KCRuk_-JTkefBqS6CLLbOA",
+      "artist": "Roman Angelos"
+    },
+    {
+      "img": "/images/spacetronic_lunchbox.jpg",
+      "title": "Spacetronic Lunchbox",
+      "link": "https://open.spotify.com/album/7l8qxzT9ABDGHBs5sN1Rt4?si=I1tohPSWTYyXCPBSrm-_PQ",
+      "artist": "Roman Angelos"
+    },
+    {
+      "img": "/images/italian_soda.jpg",
+      "title": "Italian Soda",
+      "link": "https://open.spotify.com/album/27RtvlLiC4r4nUF4Hh6xvr?si=4CXZsfv0QTuaeaEfbz4jNQ",
+      "artist": "Roman Angelos"
+    },
+    {
+      "img": "/images/pink_sand.jpg",
+      "title": "Musica Aqui",
+      "link": "https://open.spotify.com/album/4UT873Eh7d1fiOZuFwrmmv?si=fk5XV8mrTTmQdbaDbhTwRQ",
+      "artist": "Limoncello"
+    },
+    {
+      "img": "/images/musica_aqui.jpg",
+      "title": "Pink Sand",
+      "link": "https://open.spotify.com/album/34va1Mi6xrlVYjbGw0eNkF?si=k492TVTaRkiju1wj0iog9Q",
+      "artist": "Limoncello"
+    },
+    {
+      "img": "/images/dibenedetto.jpg",
+      "title": "DiBenedetto",
+      "link": "https://open.spotify.com/track/1g5deMU74SVhCSmWl0QjsR?autoplay=true",
+      "artist": "Rich Bennett"
+    },
+    {
+      "img": "/images/sound_paradise.jpg",
+      "title": "Transpacific Sound Paradise",
+      "link": "https://open.spotify.com/album/2A5YeZstkLJdjFqMyAggYH?at=10&uo=4",
+      "artist": "Monocle"
+    },
+    {
+      "img": "/images/outer_sunset.jpg",
+      "title": "Outer Sunset",
+      "link": "https://open.spotify.com/album/6sf4AszxS6NIV23faj2FSp",
+      "artist": "Monocle"
+    }
+  ]
+}
