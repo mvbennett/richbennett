@@ -5,6 +5,16 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com", "images.ctfassets.net"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 
 const plugins = [

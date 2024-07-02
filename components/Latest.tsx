@@ -5,9 +5,10 @@ import Post from "./Post";
 
 const Latest = ({ latestPosts }: any) => {
   const latestPostsList = latestPosts.map((post: any) => {
+    const img = post.fields.picture.fields?.file.url ? `https:${post.fields.picture.fields.file.url}` : ''
     return {
       title: post.fields.title,
-      img: `https:${post.fields.picture.fields.file.url}`,
+      img: img,
       content: post.fields.postContent
     }
   })
