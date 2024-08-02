@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../styles/newsingle.module.css'
 
-const BandCampPlayer = ({title, src, href}: {title: string, src: string, href: string}) => {
+const SoundCloudPlayer = ({title, src, href}: {title: string, src: string, href: string}) => {
   return (
     <div className={styles.player}>
       <iframe
@@ -41,4 +41,4 @@ const BandCampPlayer = ({title, src, href}: {title: string, src: string, href: s
   )
 }
 
-export default BandCampPlayer;
+export default SoundCloudPlayer;
