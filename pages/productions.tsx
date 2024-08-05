@@ -1,13 +1,28 @@
 import Head from "next/head"
-import Productions from "../components/Productions"
+import React from "react";
+import ProductionCard from "../components/ProductionCard";
+import Navbar from "../components/Navbar";
 
-export default function productions() {
+import productionsJson from '../content/productions.json';
+
+const Productions = () => {
+  const productionList = productionsJson['productions']
+
+  const productions = productionList.map(prod => <ProductionCard production={prod} key={prod.title} />);
   return (
     <>
       <Head>
         <title>Recorded, Mixed, and Produced by Rich Bennett</title>
       </Head>
-      <Productions />
+      <div>
+        <Navbar home={false} />
+        <div className="container">
+          <h2>Recording, Producing, Mixing</h2>
+          {productions}
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
+
+export default Productions;
