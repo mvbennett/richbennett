@@ -22,7 +22,6 @@ const ProjectCard = ({ project: {title, img, link}, index }: props) => {
         <h3 className={styles.title}>
           {title}
         </h3>
-        <p>{index}</p>
       </a>
     </div>
   );
