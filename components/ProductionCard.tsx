@@ -5,20 +5,21 @@ import styles from '../styles/components/Productions.module.css';
 
 interface props {
   production: {
-    link: string,
-    title: string,
-    img: string,
-    artist: string,
-    icons: string[]
-  }
+    link: string;
+    title: string;
+    img: string;
+    artist: string;
+    icons: string[];
+  };
+  index: number|string;
 }
 
-const ProductionCard = ({production: {title, link, img, artist, icons}}: props) => {
+const ProductionCard = ({production: {title, link, img, artist, icons}, index}: props) => {
   return (
     <div className={styles.card}>
       <a href={link} target="_blank" rel="noreferrer">
         <div className={styles.album}>
-          <Image src={img} alt={title} fill style={{ objectFit: 'contain'}} sizes="100px" />
+          <Image priority={index == 0} src={img} alt={title} fill style={{ objectFit: 'contain'}} sizes="100px" />
         </div>
       </a>
       <a href={link} target="_blank" rel="noreferrer">

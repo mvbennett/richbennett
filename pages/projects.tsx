@@ -17,7 +17,7 @@ const Projects = () => {
 
   const [projects, setProjects] = useState(filterProject("Roman Angelos"))
 
-  const projectCards = projects.map(project => <ProjectCard project={project} key={project.title} />);
+  const projectCards = projects.map((project, i) => <ProjectCard project={project} key={i} index={i} />);
 
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

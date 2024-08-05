@@ -3,14 +3,14 @@ import { FocusEvent, ChangeEvent, FormEvent } from "react"
 import styles from '../styles/components/Form.module.css';
 
 interface props {
-  handleBlur: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-  handleChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-  handleSubmit: (event: FormEvent<HTMLFormElement>) => void,
-  handleFocus: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  handleBlur: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  handleFocus: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   }
 
 
-const Form = ({ handleBlur, handleChange, handleSubmit, handleFocus }:props) => {
+const Form = ({ handleBlur, handleChange, handleSubmit, handleFocus }: props) => {
   return (
     <div className={styles.form}>
       <h2>

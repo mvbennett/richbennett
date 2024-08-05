@@ -4,12 +4,13 @@ import Navbar from "./Navbar";
 import Post from "./Post";
 
 const Latest = ({ latestPosts }: any) => {
-  const latestPostsList = latestPosts.map((post: any) => {
+  const latestPostsList = latestPosts.map((post: any, index: number) => {
     const img = post.fields.picture.fields?.file.url ? `https:${post.fields.picture.fields.file.url}` : ''
     return {
-      title: post.fields.title,
+      content: post.fields.postContent,
       img: img,
-      content: post.fields.postContent
+      index,
+      title: post.fields.title,
     }
   })
 

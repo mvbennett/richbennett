@@ -2,9 +2,9 @@ import React from "react";
 import styles from '../styles/components/SoundCloudPlayer.module.css'
 
 interface props {
-  href: string
-  src: string,
-  title: string,
+  href: string;
+  src: string;
+  title: string;
 }
 const SoundCloudPlayer = ({title, src, href}: props) => {
   return (

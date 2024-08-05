@@ -8,7 +8,8 @@ import productionsJson from '../content/productions.json';
 const Productions = () => {
   const productionList = productionsJson['productions']
 
-  const productions = productionList.map(prod => <ProductionCard production={prod} key={prod.title} />);
+  const productions = productionList.map((prod, i) => <ProductionCard production={prod} key={i} index={i} />);
+
   return (
     <>
       <Head>

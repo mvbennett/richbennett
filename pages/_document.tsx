@@ -11,6 +11,7 @@ export default function Document() {
         <meta name="theme-color" content="#d1e1ea" />
         <link rel="apple-touch-icon" href="/logo-96x96.png" />
         <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" />
       </Head>
       <body>
         <Main />
