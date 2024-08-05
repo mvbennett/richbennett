@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from '../styles/newsingle.module.css'
+import styles from '../styles/components/SoundCloudPlayer.module.css'
 import SoundCloudPlayer from "@/components/SoundCloudPlayer";
 
 export default function newsingle () {

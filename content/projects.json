@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "img": "/images/tropical_nites.jpg",
+      "title": "Tropical Nites",
+      "link": "https://open.spotify.com/album/0I57OljnY8gUGuIpkNUQ8p",
+      "artist": "Roman Angelos"
+    },
+    {
       "img": "/images/underwater_supermarkets.jpg",
       "title": "Music for Underwater Supermarkets",
       "link": "https://open.spotify.com/album/7xJfTkpi8FhHiCwhmMJXMO?si=KCRuk_-JTkefBqS6CLLbOA",
@@ -34,7 +40,7 @@
       "img": "/images/dibenedetto.jpg",
       "title": "DiBenedetto",
       "link": "https://open.spotify.com/track/1g5deMU74SVhCSmWl0QjsR?autoplay=true",
-      "artist": "Rich Bennett"
+      "artist": "Roman Angelos"
     },
     {
       "img": "/images/sound_paradise.jpg",

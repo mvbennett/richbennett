@@ -9,26 +9,25 @@ import styles from '../styles/components/Projects.module.css';
 const Projects = () => {
   const projectsList = projectsJson['projects'];
 
-  const [projects, setProjects] = useState((projectsList.filter((p) => {
-    return p.artist === 'Roman Angelos'
-  })))
+  const filterProject = (targetProject: string) => {
+    const regExp = new RegExp(targetProject, 'i');
+    return projectsList.filter(project => regExp.test(project.artist));
+  }
 
-  let projectCards = projects.map((project) => {
-    return <ProjectCard project={project} key={project.title} />;
-  });
+  const [projects, setProjects] = useState(filterProject("Roman Angelos"))
+
+  const projectCards = projects.map(project => <ProjectCard project={project} key={project.title} />);
 
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
 
     const underlined = document.querySelector(`.${styles.underline}`);
     if (underlined !== null) underlined.classList.remove(`${styles.underline}`);
 
-    const target = e.target as HTMLButtonElement
+    const target = event.target as HTMLButtonElement
     target.classList.add(`${styles.underline}`);
-    setProjects(projectsList.filter((p) => {
-      return p.artist === target.value
-    }))
+    setProjects(filterProject(target.value));
   }
 
   return (
